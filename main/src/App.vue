@@ -5,13 +5,9 @@
     </div>
     <!--    <router-link to="/">Home</router-link> |-->
     <!--    <router-link to="/about">About</router-link>-->
-    <div
-      class="sub-body"
-      id="micro-container"
-      style="flex: 1; background: #61dafb"
-    >
-      <div v-if="loading">正在加载中...</div>
-      <div v-else>子应用</div>
+    <div class="sub-body" style="flex: 1; background: #61dafb">
+      <div v-show="loading">正在加载中...</div>
+      <div v-show="!loading" style="height: 100%" id="micro-container">子应用</div>
     </div>
   </div>
   <!--  <router-view />-->
