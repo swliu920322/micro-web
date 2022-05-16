@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   { path: "/", component: () => import("../App.vue") },
   { path: "/vue2", component: () => import("../App.vue") },
   { path: "/vue3", component: () => import("../App.vue") },
@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 

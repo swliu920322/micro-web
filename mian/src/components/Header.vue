@@ -11,7 +11,7 @@
   </ul>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import { defineComponent } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
@@ -28,7 +28,7 @@ export default defineComponent({
     const route = useRoute();
     return {
       Nav,
-      toRoute(url: string) {
+      toRoute(url) {
         if (url !== route.fullPath) {
           console.log(1111222);
           router.push(url);
@@ -39,7 +39,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="less">
+<style scoped>
 ul,
 li {
   list-style: none;
