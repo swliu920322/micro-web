@@ -1,0 +1,20 @@
+{
+  "name": "micro-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swliu920322/micro-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swliu920322/micro-web/issues"
+  },
+  "homepage": "https://github.com/swliu920322/micro-web#readme"
+}
