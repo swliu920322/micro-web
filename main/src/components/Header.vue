@@ -20,9 +20,9 @@ export default defineComponent({
   components: {},
   setup() {
     const Nav = [
-      { name: "首页", url: "/vue3/#/index" },
-      { name: "资讯", url: "/vue2/#/information" },
-      { name: "视频", url: "/react18/#/video" },
+      { name: "首页", url: "/vue3#/index" },
+      { name: "资讯", url: "/vue2#/information" },
+      { name: "视频", url: "/react18#/video" },
     ];
     const router = useRouter();
     const route = useRoute();
