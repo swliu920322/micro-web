@@ -1,5 +1,6 @@
 // 给当前路由跳转打补丁
 import { getList } from "../const/subApps";
+import { ISubObj } from "@/store/sub";
 
 export const patchRouter = (globalEvent = () => 1, eventName = "") => {
   return function (...args: any[]) {
@@ -14,14 +15,28 @@ export const currentApp = () => {
   return filterApp("activeRule", currentUrl);
 };
 
-const filterApp = (key: string, value: string) => {
+const filterApp = (key: keyof ISubObj, value: string): ISubObj | null => {
   const currentApp = getList().filter((i) => i[key] === value);
   if (currentApp?.length) {
     return currentApp[0];
   }
-  return {};
+  return null;
+};
+export const filterAppByRoute = (router: string) => {
+  return filterApp("activeRule", router);
 };
 export const isTurnChild = () => {
   // @ts-ignore
-  return window.__CURRENT_SUB_APP__ !== window.location.pathname;
+  window.__ORIGIN_APP__ = window.__CURRENT_SUB_APP__;
+  // @ts-ignore
+  if (window.__CURRENT_SUB_APP__ !== window.location.pathname) {
+    const currentApp = window.location.pathname.match(/(\/\w+)/);
+    if (!currentApp) {
+      return;
+    }
+    // @ts-ignore
+    window.__CURRENT_SUB_APP__ = currentApp[0];
+    return true;
+  }
+  return false;
 };

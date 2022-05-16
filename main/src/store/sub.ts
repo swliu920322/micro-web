@@ -1,4 +1,10 @@
-export const subNavList = [
+export interface ISubObj {
+  name: string;
+  activeRule: string;
+  container: string;
+  entry: string;
+}
+export const subNavList: ISubObj[] = [
   {
     name: "react18",
     activeRule: "/react18",

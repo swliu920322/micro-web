@@ -1,7 +1,8 @@
 import { isTurnChild } from "../utils";
+import { lifeCycle } from "../lifeCycle";
 
-export const turnApp = (...args: any[]) => {
+export const turnApp = async (...args: any[]) => {
   if (isTurnChild()) {
-    console.log("路由切换了");
+    await lifeCycle();
   }
 };

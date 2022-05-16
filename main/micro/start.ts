@@ -1,10 +1,22 @@
 import { getList, setList } from "./const/subApps";
 import { rewriteRouter } from "./router/rewriteRouter";
 import { currentApp } from "./utils";
+import { setMainLifeCycle } from "./const/mainLifeCycle";
+import { ISubObj } from "@/store/sub";
 
 rewriteRouter();
-export const registerMicroApps = (appList: any[] = []) => {
+export type LifeCycle = "beforeLoad" | "mounted" | "destroyed";
+export const registerMicroApps = (
+  appList: ISubObj[] = [],
+  lifeCycle: Record<LifeCycle, Array<() => void>>
+) => {
   setList(appList);
+  lifeCycle.beforeLoad[0]();
+  setTimeout(() => {
+    lifeCycle.mounted[0]();
+  }, 1000);
+
+  setMainLifeCycle(lifeCycle);
 };
 // 启动
 export const start = () => {

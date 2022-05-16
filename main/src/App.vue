@@ -10,12 +10,26 @@
       id="micro-container"
       style="flex: 1; background: #61dafb"
     >
-      子应用
+      <div v-if="loading">正在加载中...</div>
+      <div v-else>子应用</div>
     </div>
   </div>
   <!--  <router-view />-->
 </template>
 
+<script>
+import Header from "@/components/Header";
+import { computed } from "vue";
+import { loadingRef, changeLoading } from "@/store/loading";
+export default {
+  components: { Header },
+  setup() {
+    return {
+      loading: computed(() => loadingRef.value),
+    };
+  },
+};
+</script>
 <style lang="less">
 #app {
   height: 100%;
@@ -31,9 +45,3 @@ html {
   margin: 0;
 }
 </style>
-<script>
-import Header from "@/components/Header";
-export default {
-  components: { Header },
-};
-</script>

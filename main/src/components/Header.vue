@@ -30,7 +30,6 @@ export default defineComponent({
       Nav,
       toRoute(url: string) {
         if (url !== route.fullPath) {
-          console.log(1111222);
           router.push(url);
         }
       },
