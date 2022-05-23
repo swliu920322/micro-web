@@ -1,6 +1,7 @@
 // 加载html的方法
 import { ISubObj } from "@/store/sub";
 import { fetchResource } from "../utils/fetchResource";
+import { sandbox } from "../sandbox";
 
 export const loadHtml = async (app: ISubObj) => {
   // 第一个，子应用显示在哪里
@@ -13,6 +14,7 @@ export const loadHtml = async (app: ISubObj) => {
     throw new Error("容器不存在，请检查!");
   }
   ct.innerHTML = dom;
+  scripts.forEach((i) => sandbox(app, i));
   return app;
 };
 

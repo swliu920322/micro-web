@@ -12,17 +12,20 @@ const render = () => {
     store,
     render: (h) => h(App),
   }).$mount("#app");
-}
+};
+
 if (!window.__MICRO_WEB__) {
-  render()
+  console.log(33333);
+  render();
 }
 export const bootstrap = () => {
-  console.log('开始加载')
-}
+  console.log("开始加载");
+};
 export const mount = () => {
-  render()
-  console.log('渲染成功')
-}
+  render();
+  console.log(555555);
+  console.log("渲染成功");
+};
 export const unmount = () => {
-  console.log('卸载', instance)
-}
+  console.log("卸载", instance);
+};

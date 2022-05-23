@@ -1,6 +1,7 @@
 import { filterAppByRoute } from "../utils";
 import { getMainLifeCycle } from "../const/mainLifeCycle";
 import { loadHtml } from "../loader";
+import { ISubObj } from "@/store/sub";
 
 export const lifeCycle = async () => {
   // 获取上一个子应用
@@ -13,8 +14,7 @@ export const lifeCycle = async () => {
   if (!nextApp) {
     return;
   }
-  // @ts-ignore
-  if (prevApp?.destroyed) {
+  if (prevApp?.unmount) {
     await destroyed(prevApp);
   }
   const app = await beforeLoad(nextApp);
@@ -30,14 +30,13 @@ export const beforeLoad = async (app: any) => {
   subApp?.beforeLoad?.();
   return subApp;
 };
-export const mounted = async (app: any) => {
+export const mounted = async (app: ISubObj) => {
   console.log("mounted", app);
   app?.mounted?.();
   await runMainLifeCycle("mounted");
 };
 export const destroyed = async (app: any) => {
-  console.log("destroyed", app);
-  app?.destoryed?.();
+  app?.unmount?.();
   // 对应执行一下主应用的生命周期
   await runMainLifeCycle("destroyed");
 };

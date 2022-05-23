@@ -1,4 +1,9 @@
-export interface ISubObj {
+interface lifeCycle {
+  beforeLoad?: () => void;
+  mounted?: () => void;
+  unmount?: () => void;
+}
+export interface ISubObj extends lifeCycle {
   name: string;
   activeRule: string;
   container: string;
