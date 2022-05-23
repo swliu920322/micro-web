@@ -11,7 +11,7 @@ export const registerApp = (list: ISubObj[] = []) => {
         console.log("开始加载");
       },
     ],
-    mounted: [
+    mount: [
       () => {
         changeLoading(false);
         console.log("渲染完成");

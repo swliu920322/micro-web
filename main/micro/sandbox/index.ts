@@ -5,7 +5,7 @@ export * as perform from "./performScript";
 // 子应用生命周期处理, 环境变量设置
 
 const isCheckLifeCycle = (lifeCycle: any) => {
-  if (lifeCycle?.bootstarp && lifeCycle?.mount && lifeCycle?.unmount) {
+  if (lifeCycle?.bootstrap && lifeCycle?.mount && lifeCycle?.unmount) {
     return true;
   }
 };

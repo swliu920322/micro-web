@@ -14,7 +14,7 @@ export const loadHtml = async (app: ISubObj) => {
     throw new Error("容器不存在，请检查!");
   }
   ct.innerHTML = dom;
-  scripts.forEach((i) => sandbox(app, i));
+  scripts?.forEach((i) => sandbox(app, i));
   return app;
 };
 

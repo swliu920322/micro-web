@@ -18,6 +18,7 @@ export const lifeCycle = async () => {
     await destroyed(prevApp);
   }
   const app = await beforeLoad(nextApp);
+  console.log("app-app", app);
   await mounted(app);
 };
 
@@ -31,9 +32,9 @@ export const beforeLoad = async (app: any) => {
   return subApp;
 };
 export const mounted = async (app: ISubObj) => {
-  console.log("mounted", app);
-  app?.mounted?.();
-  await runMainLifeCycle("mounted");
+  console.log("mount", app);
+  app?.mount?.();
+  await runMainLifeCycle("mount");
 };
 export const destroyed = async (app: any) => {
   app?.unmount?.();

@@ -1,9 +1,10 @@
-interface lifeCycle {
+export interface ILifeCycle {
   beforeLoad?: () => void;
-  mounted?: () => void;
+  mount?: () => void;
   unmount?: () => void;
 }
-export interface ISubObj extends lifeCycle {
+export type LifeCycle = "beforeLoad" | "mount" | "destroyed";
+export interface ISubObj extends ILifeCycle {
   name: string;
   activeRule: string;
   container: string;

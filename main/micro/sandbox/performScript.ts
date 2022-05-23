@@ -8,5 +8,6 @@ export const performScriptForEval = (script: string, appName: string) => {
         return window['${appName}']
       }
     `;
-  return eval(scriptText).call(window, window); // app module mount
+  // app module mount
+  return eval(scriptText).call(window, window);
 };
