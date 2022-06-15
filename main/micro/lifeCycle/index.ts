@@ -18,12 +18,10 @@ export const lifeCycle = async () => {
     await destroyed(prevApp);
   }
   const app = await beforeLoad(nextApp);
-  console.log("app-app", app);
   await mounted(app);
 };
 
 export const beforeLoad = async (app: any) => {
-  console.log("beforeLoad", app);
   await runMainLifeCycle("beforeLoad");
   app?.beforeLoad?.();
   const subApp = await loadHtml(app); // 获取子应用的内容

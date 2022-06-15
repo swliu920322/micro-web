@@ -9,6 +9,7 @@ export interface ISubObj extends ILifeCycle {
   activeRule: string;
   container: string;
   entry: string;
+  proxy?: Record<string, any>;
 }
 export const subNavList: ISubObj[] = [
   {
