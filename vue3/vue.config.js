@@ -1,7 +1,7 @@
 const path = require('path');
 const {name} = require('./package.json');
 const resolve = (dir) => path.resolve(__dirname, dir)
-const port = 9005;
+const port = 9003;
 module.exports = {
     outputDir: 'dist',
     assetsDir: 'static',

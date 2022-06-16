@@ -1,0 +1,284 @@
+.button {
+  font-size: 16px;
+  color: #0091FF;
+  line-height: 21px;
+  outline: none;
+  border: none;
+  background: #fff; }
+  .buttonDisabled {
+    color: #C0C0C0 !important; }
+
+.panel {
+  width: 800px;
+  height: 640px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  padding: 0 150px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%); }
+  .panelLogo {
+    display: inline-block;
+    width: 163px;
+    height: 72px;
+    margin-top: 60px;
+    opacity: 0; }
+  .panelSubtitle {
+    width: 144px;
+    height: 47px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #0091FF;
+    line-height: 47px; }
+  .panelForm {
+    display: flex;
+    flex-direction: column; }
+    .panelFormItem {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      height: 65px;
+      padding: 0 17px;
+      border-bottom: 1px solid #eee; }
+    .panelFormIcon {
+      height: 20px;
+      width: 16px;
+      margin-right: 22px; }
+    .panelFormSend {
+      font-size: 16px;
+      color: #0091FF;
+      line-height: 21px; }
+    .panelFormInput {
+      border: none;
+      outline: none;
+      height: 100%; }
+      .panelFormInput::placeholder {
+        height: 21px;
+        font-size: 16px;
+        color: #B0B0B0;
+        line-height: 21px; }
+    .panelFormRight {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%); }
+  .panelButton {
+    width: 500px;
+    height: 60px;
+    margin-top: 55px;
+    background: #0091FF;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    color: #fff; }
+
+.login {
+  position: relative; }
+  .loginBackground {
+    width: 100%; }
+
+.new-car-container {
+  width: 100%; }
+
+.new-car-content {
+  width: 1200px;
+  margin: 30px auto 0; }
+
+.calendar {
+  width: 150px;
+  background: #FFFFFF;
+  border: 1px solid #E4E4E4;
+  text-align: center;
+  position: fixed; }
+  .calendarTitle {
+    height: 32px;
+    background: #0091FF;
+    line-height: 32px;
+    font-size: 15px;
+    color: #FFFFFF; }
+  .calendarYear {
+    height: 33px;
+    background: #F0F3F9;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2686D2;
+    line-height: 33px; }
+  .calendarMonth {
+    height: 33px;
+    border-bottom: 1px solid #F0F0F0;
+    font-size: 14px;
+    color: #555555;
+    line-height: 33px;
+    font-weight: bold;
+    cursor: pointer; }
+    .calendarMonth:last-of-type {
+      border-bottom: none; }
+  .calendarClicked {
+    position: relative;
+    color: #0091FF; }
+    .calendarClicked::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 32px;
+      background: #0091FF;
+      content: ""; }
+
+.newCar {
+  width: calc(100% - 190px);
+  margin-left: 190px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center; }
+  .newCarItem {
+    flex: 0 25%;
+    text-align: center; }
+    .newCarItemImage {
+      width: 204px;
+      height: 153px; }
+    .newCarItemTitle {
+      font-size: 16px;
+      color: #333333;
+      line-height: 21px; }
+    .newCarItemDate {
+      font-size: 14px;
+      color: #F24300;
+      line-height: 19px; }
+
+.carType {
+  width: 150px;
+  background: #FFFFFF;
+  border: 1px solid #E4E4E4;
+  text-align: center;
+  position: fixed; }
+  .carTypeTitle {
+    height: 32px;
+    background: #0091FF;
+    line-height: 32px;
+    font-size: 15px;
+    color: #FFFFFF; }
+  .carTypeItem {
+    height: 33px;
+    border-bottom: 1px solid #F0F0F0;
+    font-size: 14px;
+    color: #555555;
+    line-height: 33px;
+    font-weight: bold;
+    cursor: pointer; }
+    .carTypeItem:last-of-type {
+      border-bottom: none; }
+  .carTypeClicked {
+    position: relative;
+    color: #0091FF; }
+    .carTypeClicked::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 32px;
+      background: #0091FF;
+      content: ""; }
+
+.rankList {
+  width: calc(100% - 190px);
+  margin-left: 190px;
+  display: flex;
+  flex-direction: column; }
+  .rankListItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #E4E4E4; }
+    .rankListItem:last-of-type {
+      border-bottom: none; }
+    .rankListItemLeft {
+      display: flex;
+      flex-direction: row; }
+      .rankListItemLeftRank {
+        margin-top: 8px;
+        font-size: 35px;
+        color: #c2c2c2;
+        line-height: 40px; }
+      .rankListItemLeftImage {
+        width: 180px;
+        height: 135px;
+        margin-left: 18px;
+        margin-right: 30px; }
+      .rankListItemLeftInfo {
+        display: flex;
+        flex-direction: column; }
+    .rankListItemRightTop {
+      font-size: 14px;
+      color: #333;
+      line-height: 19px;
+      margin-bottom: 33px; }
+      .rankListItemRightTopSplit {
+        margin: 0 10px;
+        font-size: 14px;
+        color: #d6d6d6; }
+    .rankListItemRightBottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center; }
+      .rankListItemRightBottomBuy {
+        width: 100px;
+        height: 36px;
+        margin-right: 10px;
+        background: #fff;
+        border-radius: 18px;
+        border: 1px solid #0091ff;
+        font-size: 16px;
+        font-weight: 400;
+        color: #2686d2;
+        line-height: 36px; }
+      .rankListItemRightBottomPrice {
+        width: 100px;
+        height: 36px;
+        background: #0091ff;
+        border-radius: 18px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 36px; }
+    .rankListItemTitle {
+      margin-top: 21px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      line-height: 26px; }
+    .rankListItemSubtitle {
+      height: 19px;
+      margin-top: 14px;
+      font-size: 14px;
+      color: #919191;
+      line-height: 19px; }
+    .rankListItemPrice {
+      margin-top: 4px;
+      font-size: 22px;
+      color: #f24300;
+      line-height: 29px; }
+    .rankListItemLink {
+      height: 19px;
+      font-size: 14px;
+      color: #333;
+      line-height: 19px; }
+
+.rank-container {
+  width: 100%; }
+
+.rank-content {
+  width: 1200px;
+  margin: 30px auto 0; }
+

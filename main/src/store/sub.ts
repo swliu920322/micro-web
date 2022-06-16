@@ -13,6 +13,18 @@ export interface ISubObj extends ILifeCycle {
 }
 export const subNavList: ISubObj[] = [
   {
+    name: "react15",
+    activeRule: "/react15",
+    container: "#micro-container",
+    entry: "//localhost:9005",
+  },
+  {
+    name: "react16",
+    activeRule: "/react16",
+    container: "#micro-container",
+    entry: "//localhost:9006",
+  },
+  {
     name: "react18",
     activeRule: "/react18",
     container: "#micro-container",
@@ -22,12 +34,12 @@ export const subNavList: ISubObj[] = [
     name: "vue2",
     activeRule: "/vue2",
     container: "#micro-container",
-    entry: "//localhost:9004",
+    entry: "//localhost:9002",
   },
   {
     name: "vue3",
     activeRule: "/vue3",
     container: "#micro-container",
-    entry: "//localhost:9005",
+    entry: "//localhost:9003",
   },
 ];

@@ -14,16 +14,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import { nav } from "@/router";
 
 export default defineComponent({
   name: "Header",
   components: {},
   setup() {
-    const Nav = [
-      { name: "vue3", url: "/vue3#/index" },
-      { name: "vue2", url: "/vue2#/information" },
-      { name: "react18", url: "/react18#/video" },
-    ];
+    const Nav = nav;
     const router = useRouter();
     const route = useRoute();
     return {
