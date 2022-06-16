@@ -13,17 +13,10 @@ export const rewriteRouter = () => {
     window.history.replaceState,
     "micro_replace"
   );
-  window.addEventListener("micro_push", (...args) => {
-    console.log("micro_push");
-    turnApp(...args);
-  });
-  window.addEventListener("micro_replace", (...args) => {
-    console.log("micro_push");
-    turnApp(...args);
-  });
+  window.addEventListener("micro_push", turnApp);
+  window.addEventListener("micro_replace", turnApp);
 
   window.onpopstate = function () {
-    console.log("onpopstate");
     turnApp();
   };
 };

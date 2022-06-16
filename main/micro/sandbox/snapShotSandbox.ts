@@ -19,6 +19,7 @@ export class SnapShotSandbox {
   }
   // 销毁
   inactive() {
+    console.log('inactive')
     setTimeout(() => {
       for (const key in window) {
         const val = this.snapshot.get(key);
