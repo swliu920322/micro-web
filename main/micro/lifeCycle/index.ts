@@ -15,6 +15,9 @@ export const lifeCycle = async () => {
     return;
   }
   if (prevApp?.unmount) {
+    if (prevApp.proxy) {
+      prevApp.proxy.inactive(); // 销毁沙箱
+    }
     await destroyed(prevApp);
   }
   const app = await beforeLoad(nextApp);

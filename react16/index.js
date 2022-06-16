@@ -17,9 +17,7 @@ export const bootstrap = () => {
 };
 
 export const mount = (app) => {
-  // app.appInfo.header.changeHeader(false);
-  // app.appInfo.nav.changeNav(false);
-  setMain(app); // 做app的一个缓存
+  // setMain(app); // 做app的一个缓存
   render();
   console.log("react16-渲染成功");
 };

@@ -10,7 +10,9 @@ export class SnapShotSandbox {
   }
   // 激活
   active() {
+    // 创建一个沙箱快照
     this.snapshot = new Map();
+    // 遍历全局环境
     for (const key in window) {
       this.snapshot.set(key, window[key]);
     }
@@ -20,6 +22,7 @@ export class SnapShotSandbox {
     for (const key in window) {
       const val = this.snapshot.get(key);
       if (window[key] !== val) {
+        // 还原
         window[key] = val;
       }
     }

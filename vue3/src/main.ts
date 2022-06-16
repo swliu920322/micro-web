@@ -13,6 +13,9 @@ const render = () => {
 if (!window.__MICRO_WEB__) {
   render();
 }
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+window.a = 111;
 export const bootstrap = () => {
   console.log("开始加载");
 };
