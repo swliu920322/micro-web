@@ -16,7 +16,6 @@ const filePath = {
 // cd 子应用的目录 npm start 启动项目
 function runChild() {
   Object.values(filePath).forEach((item) => {
-    console.log(item);
     childProcess.spawn(`cd ${item} && npm start`, { stdio: "inherit", shell: true });
   });
 }

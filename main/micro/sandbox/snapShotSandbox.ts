@@ -19,12 +19,14 @@ export class SnapShotSandbox {
   }
   // 销毁
   inactive() {
-    for (const key in window) {
-      const val = this.snapshot.get(key);
-      if (window[key] !== val) {
-        // 还原
-        window[key] = val;
+    setTimeout(() => {
+      for (const key in window) {
+        const val = this.snapshot.get(key);
+        if (window[key] !== val) {
+          // 还原
+          window[key] = val;
+        }
       }
-    }
+    }, 5000);
   }
 }

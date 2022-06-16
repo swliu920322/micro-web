@@ -5,6 +5,7 @@ import { setMainLifeCycle } from "./const/mainLifeCycle";
 import { ISubObj, LifeCycle } from "@/store/sub";
 
 rewriteRouter();
+
 export const registerMicroApps = (
   appList: ISubObj[] = [],
   lifeCycle: Record<LifeCycle, Array<() => void>>
@@ -26,7 +27,6 @@ export const start = () => {
   }
   // 有子应用，插到符合当前路由的子应用
   const app = currentApp();
-  console.log(app);
   if (app) {
     const { pathname, hash } = window.location;
     const url = pathname + hash;

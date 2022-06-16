@@ -10,7 +10,7 @@ export const lifeCycle = async () => {
   // 获取跳转的子应用
   // @ts-ignore
   const nextApp = filterAppByRoute(window.__CURRENT_SUB_APP__);
-  // console.log(prevApp, nextApp);
+  console.log(prevApp, nextApp);
   if (!nextApp) {
     return;
   }

@@ -15,6 +15,10 @@ export const currentApp = () => {
   return filterApp("activeRule", currentUrl);
 };
 
+export const filterAppByRoute = (router: string) => {
+  return filterApp("activeRule", router);
+};
+// 查找子应用
 const filterApp = (key: keyof ISubObj, value: string): ISubObj | null => {
   const currentApp = getList().filter((i) => i[key] === value);
   if (currentApp?.length) {
@@ -22,21 +26,33 @@ const filterApp = (key: keyof ISubObj, value: string): ISubObj | null => {
   }
   return null;
 };
-export const filterAppByRoute = (router: string) => {
-  return filterApp("activeRule", router);
-};
+
 export const isTurnChild = () => {
   // @ts-ignore
-  window.__ORIGIN_APP__ = window.__CURRENT_SUB_APP__;
+  console.log("cur", window.__CURRENT_SUB_APP__);
+
   // @ts-ignore
-  if (window.__CURRENT_SUB_APP__ !== window.location.pathname) {
-    const currentApp = window.location.pathname.match(/(\/\w+)/);
-    if (!currentApp) {
-      return;
-    }
-    // @ts-ignore
-    window.__CURRENT_SUB_APP__ = currentApp[0];
-    return true;
+  window.__ORIGIN_APP__ = window.__CURRENT_SUB_APP__; // 上一个子应用
+
+  // 那么现在呢我们就需要获取到我们的 location.pathname 里面符合我们 子应用配置的 activeRule 的这样一个规则
+  let prefix: any = window.location.pathname.match(/(\/\w+)/);
+  if (prefix) {
+    prefix = prefix[0];
+  } else {
+    return;
   }
-  return false;
+  // @ts-ignore
+  if (window.__CURRENT_SUB_APP__ === prefix) {
+    return false;
+  }
+  // @ts-ignore
+  const currentApp = window.location.pathname.match(/(\/\w+)/);
+  if (!currentApp) {
+    return;
+  }
+  // @ts-ignore
+  console.log("cur", currentApp[0]);
+  // @ts-ignore
+  window.__CURRENT_SUB_APP__ = currentApp[0];
+  return true;
 };
