@@ -30,22 +30,27 @@ const filterApp = (key: keyof ISubObj, value: string): ISubObj | null => {
 // 路由是否改变
 // 路由如果一样，则没有变化
 export const isTurnChild = () => {
-  console.log("turn---------start");
   // @ts-ignore
-  console.log(window.__CURRENT_SUB_APP__);
-  console.log(window.location.pathname.match(/(\/\w+)/));
-
-  // @ts-ignore
-  window.__ORIGIN_APP__ = window.__CURRENT_SUB_APP__; // 上一个子应用
+  if (!window.__ORIGIN_APP__) {
+    // @ts-ignore
+    window.__ORIGIN_APP__ = window.__CURRENT_SUB_APP__; // 上一个子应用
+    return true;
+  }
 
   // 那么现在呢我们就需要获取到我们的 location.pathname 里面符合我们 子应用配置的 activeRule 的这样一个规则
   let prefix: any = window.location.pathname.match(/(\/\w+)/);
   if (prefix) {
     prefix = prefix[0];
   }
+  // vue3跳转总是临时到到内部路由，影响切换逻辑，筛选掉临时路由
+  if (!filterAppByRoute(prefix)) {
+    return false;
+  }
+  // @ts-ignore
+  window.__ORIGIN_APP__ = window.__CURRENT_SUB_APP__; // 上一个子应用
+
   // @ts-ignore
   if (window.__CURRENT_SUB_APP__ === prefix) {
-    console.log("turn---------end", false);
     return false;
   }
   // 不一样的表示要跳转到另一个子应用去了
@@ -54,8 +59,6 @@ export const isTurnChild = () => {
   if (currentApp) {
     // @ts-ignore
     window.__CURRENT_SUB_APP__ = currentApp[0];
-    console.log("turn---------end", true);
     return true;
   }
-  console.log("turn---------end", false);
 };
