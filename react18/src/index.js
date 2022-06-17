@@ -29,12 +29,12 @@ if (!window.__MICRO_WEB__) {
   render();
 }
 export const bootstrap = () => {
-  console.log("开始加载");
+  console.log("react18开始加载");
 };
 export const mount = () => {
   render();
-  console.log("渲染成功");
+  console.log("react18渲染成功");
 };
 export const unmount = () => {
-  console.log("卸载", instance);
+  console.log("react18卸载", instance);
 };

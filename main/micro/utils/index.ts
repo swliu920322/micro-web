@@ -27,7 +27,14 @@ const filterApp = (key: keyof ISubObj, value: string): ISubObj | null => {
   return null;
 };
 
+// 路由是否改变
+// 路由如果一样，则没有变化
 export const isTurnChild = () => {
+  console.log("turn---------start");
+  // @ts-ignore
+  console.log(window.__CURRENT_SUB_APP__);
+  console.log(window.location.pathname.match(/(\/\w+)/));
+
   // @ts-ignore
   window.__ORIGIN_APP__ = window.__CURRENT_SUB_APP__; // 上一个子应用
 
@@ -38,6 +45,7 @@ export const isTurnChild = () => {
   }
   // @ts-ignore
   if (window.__CURRENT_SUB_APP__ === prefix) {
+    console.log("turn---------end", false);
     return false;
   }
   // 不一样的表示要跳转到另一个子应用去了
@@ -46,6 +54,8 @@ export const isTurnChild = () => {
   if (currentApp) {
     // @ts-ignore
     window.__CURRENT_SUB_APP__ = currentApp[0];
+    console.log("turn---------end", true);
     return true;
   }
+  console.log("turn---------end", false);
 };

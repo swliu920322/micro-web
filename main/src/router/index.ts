@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 export const nav = [
-  { name: "vue3", url: "/vue3#/index" },
+  { name: "vue3", url: "/vue3#/home" },
   { name: "vue2", url: "/vue2#/information" },
   { name: "react15", url: "/react15#/information" },
   { name: "react16", url: "/react16#/rank" },

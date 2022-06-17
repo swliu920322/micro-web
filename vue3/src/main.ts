@@ -17,12 +17,12 @@ if (!window.__MICRO_WEB__) {
 // @ts-ignore
 window.a = 111;
 export const bootstrap = () => {
-  console.log("开始加载");
+  console.log("vue3开始加载");
 };
 export const mount = () => {
   render();
-  console.log("渲染成功");
+  console.log("vue3渲染成功");
 };
 export const unmount = () => {
-  console.log("卸载", instance);
+  console.log("vue3卸载", instance);
 };

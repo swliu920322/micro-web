@@ -15,17 +15,15 @@ const render = () => {
 };
 
 if (!window.__MICRO_WEB__) {
-  console.log(33333);
   render();
 }
 export const bootstrap = () => {
-  console.log("开始加载");
+  console.log("vue2开始加载");
 };
 export const mount = () => {
   render();
-  console.log(555555);
-  console.log("渲染成功");
+  console.log("vue2渲染成功");
 };
 export const unmount = () => {
-  console.log("卸载", instance);
+  console.log("vue2卸载", instance);
 };

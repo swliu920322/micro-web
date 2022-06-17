@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.scss";
-import axios from 'axios'
+import axios from "axios";
 // 列表元素
 import InformationItem from "../item/index.jsx";
 
@@ -25,15 +25,132 @@ class InformationList extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/react15/information/list').then(res => {
-      const { list, page, limit, total } = res.data
-      this.setState({
-        list,
-        page,
-        limit,
-        total,
-      })
-    })
+    let res = {
+      list: [
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: true,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+        {
+          img: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1695163309,2577846378&fm=26&gp=0.jpg",
+          title: "爱在大草原 吉利豪越的设计师一定是个暖男",
+          number: "3026",
+          type: "导购",
+          status: false,
+        },
+      ],
+      page: 1,
+      limit: 10,
+      total: 200,
+    };
+    const { list, page, limit, total } = res;
+    this.setState({
+      list,
+      page,
+      limit,
+      total,
+    });
   }
 
   render() {
